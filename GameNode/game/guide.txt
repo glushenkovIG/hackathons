@@ -1,0 +1,19 @@
+
+csc IncDec.cs /reference:expload.dll    
+
+pravda compile dotnet --input IncDec.exe --output TestAutos.pravda
+
+pravda broadcast deploy --wallet ../my-wallet.json --limit 25000 --price 1 --endpoint https://publicnode.expload.com/api/public/broadcast --input IncDec.pravda
+
+
+
+curl -X POST -H "Content-Type: application/json" --data "{\"address\": \"74962B2C94098E123761EC7C39EEA3C96DC073F6A0121158B81551A5CCD9E637\", \"method\": \"Fight\", \"args\": ["e30a267aef6240cf28c4761aa7da32e14e8016e24d033549c4ed2c7eaa177082", "fcd158bb6bddebc9fadbe12df4ce2accb0e5360fc059e10c7eb3c0828c022832"] }" localhost:8087/api/program/method
+
+
+Fight
+curl -X POST -H "Content-Type: application/json" --data '{"address": "21B262DDCF883D69D4642CFA21E39B463F143BA0729D195E16C3E9BD1BC139EA", "method": "Fight", "args": [{"tpe": "bytes", "value": "e30a267aef6240cf28c4761aa7da32e14e8016e24d033549c4ed2c7eaa177082"}, {"tpe": "bytes", "value": "fcd158bb6bddebc9fadbe12df4ce2accb0e5360fc059e10c7eb3c0828c022832"}] }' localhost:8087/api/program/method
+
+
+
+
+
